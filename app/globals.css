@@ -1,26 +1,20 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  @apply  box-border;
+  
+
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer components {
+  .button-primary {
+    @apply text-2xl py-4 text-lg font-semibold text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition;
   }
-}
+   .button-secondary {
+    @apply py-4 text-lg px-4 text-white bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-lg transition;
+  }
+  .button-tertiary {
+    @apply py-4 text-lg px-4 text-white bg-black hover:bg-gray-500 px-4 py-2 rounded-lg transition;
+  }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
