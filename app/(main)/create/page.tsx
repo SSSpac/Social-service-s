@@ -15,26 +15,12 @@ const CreatePost = () => {
         resolver: zodResolver(postSchema)
     });
 
-// In your CreatePost component page.tsx
-const { mutate, error, isPending } = useMutation({
-    mutationFn: CreatePostAction,
-    onMutate: () => toast.loading('Creating post...', { id: 1 }),
-    onSuccess: () => {
-        toast.success('Post uploaded successfully!', { id: 1 });
-    },
-    onError: (error) => {
-        toast.error(`Failed to create post: ${error.message}`, { id: 1 });
-        console.error('Create post error:', error);
-    }
-});
 
-// Add loading state to button
-<button 
-    className="button-secondary w-1/2 m-auto" 
-    disabled={isPending}
->
-    {isPending ? 'Creating...' : 'Create post!'}
-</button> 
+    const { mutate, error } = useMutation({
+        mutationFn: CreatePostAction,
+        onMutate: () => toast.loading('Creating post...', { id: 1 }),
+        onSettled: () => toast.success('Post uploaded successfully!', { id: 1 })
+    })  
 
     return (
         <form onSubmit={handleSubmit(values => mutate(values))} className="p-4 flex flex-col w-[700px] mx-auto">
