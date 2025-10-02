@@ -1,9 +1,7 @@
 'use client'
-import {DeletePost} from '@/actions/delete-post'
-import {toast} from "sonner"
+import { DeletePost } from '@/actions/delete-post'
+import { toast } from "sonner"
 import { useMutation } from '@tanstack/react-query'
-
-
 
 const DeleteButton = ({ postId }: { postId: number }) => {
 
@@ -20,4 +18,3 @@ const DeleteButton = ({ postId }: { postId: number }) => {
 }
 
 export default DeleteButton;        
-

@@ -7,6 +7,7 @@ import { revalidate } from "@/app/(main)/page"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
 
+ 
 export const CreatePostAction = async (postDataValues: z.infer<typeof postSchema>) => {
     const supabase = await createClient();
     const { data: { user } } = await supabase.auth.getUser()

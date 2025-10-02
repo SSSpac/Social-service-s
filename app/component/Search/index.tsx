@@ -10,7 +10,7 @@ const SearchInput = () => {
 
     const {data} = useQuery({
         queryKey:['search-results', userInput],
-        queryFn: async () => {
+        queryFn: async ({ signal }) => {
             const {data,error} = await getSearchedPosts(userInput)
             if(error) throw new Error
             return data
@@ -18,7 +18,6 @@ const SearchInput = () => {
         enabled: userInput && userInput.length > 0 ? true : false
     })
 
-    console.log("Search results:", data)
 
     const handleChange = (e:{target: {value: SetStateAction<string>}}) => {
         setUserInput(e.target.value)

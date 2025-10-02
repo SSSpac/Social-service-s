@@ -1,14 +1,11 @@
 'use client'
-import {useForm} from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { postSchema } from "@/actions/schemas"
-import { useMutation } from "@tanstack/react-query"
-import { toast } from "sonner";
 
 import { CreatePostAction } from "@/actions/create-post";
-
-
-
+import { postSchema } from "@/actions/schemas";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useMutation } from "@tanstack/react-query";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 
 const CreatePost = () => {
     const { register, handleSubmit } = useForm({
