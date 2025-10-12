@@ -1,7 +1,7 @@
 'use client'
 import {SetStateAction, use, useState} from "react"
 import { useQuery } from "@tanstack/react-query";
-import { getSearchedPosts } from "../../utils/supabase/queries";
+import { getSearchedPosts } from "../../../utils/supabase/queries";
 import Link from "next/link";
 import { Search } from "lucide-react";
 
@@ -11,7 +11,7 @@ const SearchInput = () => {
     const {data} = useQuery({
         queryKey:['search-results', userInput],
         queryFn: async ({ signal }) => {
-            const {data,error} = await getSearchedPosts(userInput)
+            const {data,error} = await getSearchedPosts(userInput, signal)
             if(error) throw new Error
             return data
         }, 
@@ -32,7 +32,7 @@ const SearchInput = () => {
     {data && 
         <div onClick={() => setUserInput('')} className="border absolute bg-white p-2 rounded-xl">
             {data.map(({ title, slug }) => 
-                <Link className="block" href={`/${slug}`}>
+                <Link key={slug} className="block" href={`/${slug}`}>
                     {title}
                 </Link>
             )}

@@ -3,9 +3,9 @@ import Image from "next/image"
 
 const Logo = () => {
     return (
-        <Link href="/" className=" flex items-center justify-start rounded text-xl italic font-bold"> SECTOR
+        <Link href="/" className=" flex items-center justify-start rounded text-xl italic mr-2 gap-6 font-bold"> SECTOR
             <Image 
-                src="/space.jpg" 
+                src="/team_fg_img.png" 
                 alt=" Logo"
                 width={110}
                 height={20} 

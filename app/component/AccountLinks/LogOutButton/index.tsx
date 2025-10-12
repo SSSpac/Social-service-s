@@ -1,10 +1,10 @@
 'use client'
 
-import {Logout} from "@/actions/log-out"
+import {LogOut} from "../../../../actions/log-out"
 
 const LogOutButton = () => {
     const handleClick = () => {
-        Logout()
+        LogOut()
     }
     return (
         <button onClick={handleClick} className="button-secondary"> LogOut</button>

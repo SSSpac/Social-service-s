@@ -1,15 +1,12 @@
 import HomePosts from "../component/Home/HomePosts"
-import { getHomePosts } from "../utils/supabase/queries";
-import {createClient} from "../utils/supabase/browser-client"
+import { getHomePosts } from "../../utils/supabase/queries";
+import { createClient } from "../../utils/supabase/server-client"
 import Link from "next/link"
-import cache from "next/cache"
-
-
 
 export const revalidate = 600;
     
 export default async function Home() {
-  const supabase = createClient();
+  const supabase = await createClient(); 
   const { data, error } = await getHomePosts(supabase);
 
   if (error) return;
