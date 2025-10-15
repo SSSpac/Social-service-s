@@ -2,6 +2,7 @@ import { createClient } from "../../../utils/supabase/server-client"
 import { getSinglePost } from "../../../utils/supabase/queries"
 import DeleteButton from "./Deletebutton"
 import EditButton from "./EditButton"
+import Comments from "../../../app/component/comments"
 import { Calendar, User } from "lucide-react"
 
 const SinglePost = async ({ params }: { params: { slug: string } }) => {
@@ -33,9 +34,9 @@ const SinglePost = async ({ params }: { params: { slug: string } }) => {
     }
 
     return (
-        <div className="min-h-screen   py-8 px-4">
-            <div className="max-w-2xl mx-auto">
-                <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+        <div className="min-h-screen py-8 px-4">
+            <div className="max-w-4xl mx-auto"> 
+                <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden mb-8">
                     <div className="p-6 border-b border-gray-100">
                         <h1 className="text-2xl font-bold text-gray-900 mb-3">
                             {data.title}
@@ -76,6 +77,12 @@ const SinglePost = async ({ params }: { params: { slug: string } }) => {
                             <DeleteButton postId={data.id} />
                         </div>
                     )}
+                </div>
+
+                <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+                    <div className="p-6">
+                        <Comments postId={data.id} postSlug={data.slug} />
+                    </div>
                 </div>
             </div>
         </div>

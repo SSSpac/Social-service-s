@@ -29,5 +29,8 @@ export const getSearchedPosts = async (searchTerm: string, signal: AbortSignal) 
 }
 
 
+
+
+
 export type HomePostsType = QueryData<ReturnType<typeof getHomePosts>>
 export type SinglePostsType = QueryData<ReturnType<typeof getSinglePost>> 
