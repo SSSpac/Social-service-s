@@ -7,7 +7,7 @@ const Logo = () => {
             <Image 
                 src="/team_fg_img.png" 
                 alt=" Logo"
-                width={110}
+                width={90}
                 height={20} 
                 priority 
             />
