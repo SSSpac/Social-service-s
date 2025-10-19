@@ -113,7 +113,6 @@ export const Comments = ({ postId, postSlug }: CommentsProps) => {
         </div>
       </form>
 
-      {/* Comments List */}
       <div className="space-y-6">
         {comments?.map((comment) => (
           <CommentItem
@@ -128,7 +127,7 @@ export const Comments = ({ postId, postSlug }: CommentsProps) => {
         ))}
         
         {(!comments || comments.length === 0) && (
-          <p className="text-gray-500 text-center py-8">No comments yet. Be the first to comment!</p>
+          <p className="text-gray-300 text-center py-8">Be the first to comment!</p>
         )}
       </div>
     </div>
@@ -223,7 +222,7 @@ const CommentItem = ({ comment, onReply, onDelete, replyingTo, postSlug, level }
 
       {replyingTo === comment.id && (
         <div className="mt-2 text-sm text-blue-600">
-          ↳ Replying to this comment...
+          ↳ Reply to this comment...
         </div>
       )}
     </div>

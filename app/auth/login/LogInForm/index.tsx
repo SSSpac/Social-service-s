@@ -18,7 +18,7 @@ const LogInForm = () => {
     })
     return (
         <>
-        <form onSubmit={handleSubmit(values => mutate(values))} className="mb-4 p-4 flex flex-col ">
+        <form onSubmit={handleSubmit(values => mutate(values))} className="text-white mb-4 p-4 flex flex-col ">
         <fieldset>
             <label htmlFor="email">Enter Your Email</label>
             <input className="ml-2 mb-4 px-2" {...register("email")}id="email" placeholder="Your email..." />

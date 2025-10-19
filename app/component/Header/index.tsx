@@ -1,11 +1,11 @@
-import Logo from "../Logo/page"
+import Logo from "../Logo/index"
 import AccountLinks from "../AccountLinks/index"
 import SearchInput from "../Search"
 
 const Header = () => { 
     return (
        <>
-       <header className="flex justify-between items-center flex-wrap">
+       <header className="flex bg-gray-700 justify-between items-center  flex-wrap">
             <Logo />
             <SearchInput />
             <AccountLinks />

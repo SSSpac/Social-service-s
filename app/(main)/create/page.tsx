@@ -47,14 +47,14 @@ const CreatePage = () => {
     }
 
     return ( 
-      <div className="border-1 rounded-xl p-4 w-[700px] mx-auto">
-        <h2 className="text-2xl font-bold">Create a New Post</h2>
+      <div className=" rounded-xl p-4 w-[700px] mx-auto">
+        <h2 className="text-2xl text-center text-white font-bold">Create a New Post</h2>
         <form 
           onSubmit={handleSubmit(onSubmit)}
           className="text-2xl font-bold text-gray-900 leading-tight mb-2 p-4 flex flex-col w-[700px] mx-auto shadow-2xl shadow-black my-[50] rounded-2xl"
         >
           <fieldset className="space-y-2 mb-4">
-            <label className="flex items-center gap-4 text-gray-600 flex-wrap" htmlFor="title">
+            <label className="flex text-gray-400 items-center gap-4  flex-wrap" htmlFor="title">
               Title:
             </label>
             <div className="flex gap-3">
@@ -70,21 +70,21 @@ const CreatePage = () => {
           
           <fieldset>
             <div className="space-y-2">
-              <label className="font-semibold text-gray-700 flex items-center gap-2" htmlFor="content">
+              <label className="font-semibold text-gray-400 flex items-center gap-2" htmlFor="content">
                 What do you have to say?
               </label>
               <textarea 
                 className="w-full h-32 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-gray-50 resize-none" 
                 id="content" 
                 {...register('content')} 
-                placeholder="Crickets in here..." 
+                placeholder="..." 
               />
               {errors.content && <ErrorMessage message={errors.content.message!} />}
             </div>
           </fieldset>
           
           <fieldset className="mt-2 flex items-center gap-2">
-            <label className="font-bold cursor-pointer border p-1" htmlFor="image">
+            <label className="font-bold cursor-pointer border text-gray-400 p-1" htmlFor="image">
               Upload image
             </label>
             <input 

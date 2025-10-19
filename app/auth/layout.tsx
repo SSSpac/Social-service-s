@@ -1,4 +1,4 @@
-import Logo from "../../app/component/Logo/page";
+import Logo from "../../app/component/Logo/index";
 const AuthLayout = ({children,
 }: {children: React.ReactNode
 }) => {

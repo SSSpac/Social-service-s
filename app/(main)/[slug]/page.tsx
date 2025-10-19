@@ -36,13 +36,13 @@ const SinglePost = async ({ params }: { params: { slug: string } }) => {
     return (
         <div className="min-h-screen py-8 px-4">
             <div className="max-w-4xl mx-auto"> 
-                <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden mb-8">
+                <div className=" rounded-2xl shadow-xl border border-gray-200 overflow-hidden mb-8">
                     <div className="p-6 border-b border-gray-100">
-                        <h1 className="text-2xl font-bold text-gray-900 mb-3">
+                        <h1 className="text-2xl font-bold text-white mb-3">
                             {data.title}
                         </h1>
                         
-                        <div className="flex items-center gap-4 text-gray-600 text-sm">
+                        <div className="flex items-center gap-4 text-gray-300 text-medium">
                             <div className="flex items-center gap-2">
                                 <User className="w-4 h-4" />
                                 <span>{data.users.username}</span>
@@ -56,7 +56,7 @@ const SinglePost = async ({ params }: { params: { slug: string } }) => {
                         </div>
                     </div>
                     <div className="p-6">
-                        <p className="text-gray-700 leading-relaxed whitespace-pre-line mb-6">
+                        <p className="text-gray-200 text-center leading-relaxed whitespace-pre-line mb-6">
                             {data.content}
                         </p>
 
@@ -72,14 +72,14 @@ const SinglePost = async ({ params }: { params: { slug: string } }) => {
                     </div>
 
                     {isAuthor && (
-                        <div className="px-6 py-4 border-t border-gray-100 bg-gray-50 flex justify-end gap-3">
+                        <div className="px-6 py-4 border-t  flex justify-end gap-3">
                             <EditButton slug={data.slug} />
                             <DeleteButton postId={data.id} />
                         </div>
                     )}
                 </div>
 
-                <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+                <div className="text-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
                     <div className="p-6">
                         <Comments postId={data.id} postSlug={data.slug} />
                     </div>
